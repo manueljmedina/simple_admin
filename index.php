@@ -36,10 +36,4 @@ if ($_SESSION && array_key_exists(SYSTEM, $_SESSION)){
 }else{
 	require SYSTEMAPP.PATHVIEWS.'login.php';
 }
-
-
-
-
-
-
 ?>
