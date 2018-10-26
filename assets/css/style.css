@@ -1,0 +1,21 @@
+/*modals*/
+.modal-header {
+    border-bottom: 0;
+    min-height: 20px;
+    padding: 12px 15px;
+	color:#FFF;
+	background-image: none;
+    background: #28a9f1;
+}
+
+.modal-title {
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: "Open Sans";
+}
+input.parsley-error
+    {
+		border: 1px solid red !important;
+    }
