@@ -19,5 +19,7 @@ $btns = array(
 	$form->porlet_buttons	= $form->inputButton($btns);
 	
 	echo $form->porlet();
+	
+	$menus->consultar_menus('');
 
 ?>

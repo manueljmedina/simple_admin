@@ -1,10 +1,6 @@
 <?php
-
-
 class database{
-    public    $habilitado			= array('Habilitado'=>'Habilitado','Inactivo'=>'Inactivo'); 
-	public    $total_registros      = array('300'=>'300','500'=>'500','1000'=>'1000'); 
- 
+	
 	protected function conexion(){  
         $conexion = new mysqli(SERVER, USER, PASS, DATEBASE);
         $conexion->query("SET NAMES '".CODING."'");

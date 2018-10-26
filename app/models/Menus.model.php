@@ -25,6 +25,21 @@ class Menus extends database{
 		return $menu_padre;
 	}
 	
+	function consultar_menus($variables){
+		
+		$arreglo			= array();
+		$arreglo['table']	= $this->table;
+		$arreglo['where']	= array('nombre'=>'');
+		$arreglo['select']	= array('cod_menu','nombre');
+		$where				= $this->get_where($arreglo);  
+			
+		var_dump($where);
+		foreach($where as $menus){
+			var_dump($menus);
+		}
+		
+	}
+	
 
 
 	
