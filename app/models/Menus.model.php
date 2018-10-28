@@ -27,13 +27,13 @@ class Menus extends database{
 	
 	function consultar_menus($variables){
 		
-		$arreglo			= array();
+		$arreglo		= array();
 		$arreglo['table']	= $this->table;
-		$arreglo['where']	= array('nombre'=>'');
+		$arreglo['where']	= array('like%nombre'=>$variables['nombre'],'like%descripcion'=>$variables['descripcion'],'menu_padre'=>$variables['padre']);
 		$arreglo['select']	= array('cod_menu','nombre');
-		$where				= $this->get_where($arreglo);  
+		$where			= $this->get_where($arreglo);  
 			
-		var_dump($where);
+		
 		foreach($where as $menus){
 			var_dump($menus);
 		}

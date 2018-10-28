@@ -20,7 +20,7 @@ class database{
     }
 	
 	#get_where
-	public function get_where($array){
+public function get_where($array){
 		if (is_array($array) && isset($array['table'])){#si no se introduce la tabla a consultar la funcion no hace nada
 			$operator = 'AND';
 			
@@ -37,15 +37,26 @@ class database{
 					$fieldsvals = array();
 					foreach($where as $value=>$fields){
 						$where_fields	= $where[$value];
-						$find			= strpos($where_fields, '.');#validar si tiene un punto el campo para identificar otra base de datos
-						$find_like		= strpos($where_fields, 'like:');
-						$find_like_a	= strpos($where_fields, 'like%');
-						
+						$find		= strpos($where_fields, '.');#validar si tiene un punto el campo para identificar otra base de datos
+                                                $find_like	= strpos($value, 'like:');
+                                                $find_like_a	= strpos($value, 'like%');
+                                                
 						if ($find === false) {
 							$where_fields = "'". $where[$value]."'";
 						}
+                                                
+                                                if($find_like === false && $find_like_a === false){
+                                                    $fieldsvals[]  = ' '.$value . " = ". $where_fields;
+                                                }elseif($find_like !==false){
+                                                     $value         = str_replace("like:","",$value);
+                                                     $fieldsvals[]  = ' '.$value . " like ". $where_fields; 
+                                                }elseif($find_like_a !==false){
+                                                     $where_fields  = "'%". $where[$value]."%'";
+                                                     $value         = str_replace("like%","",$value);
+                                                     $fieldsvals[]  = ' '.$value . " like ". $where_fields; 
+                                                }
 
-						$fieldsvals[]  = ' '.$value . " = ". $where_fields;
+						
 					}
 					if (isset($array['operator'])){
 						$operator = $array['operator'];

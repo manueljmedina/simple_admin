@@ -9,8 +9,8 @@ class form{
 	public    $input_rows			= 'col-md-6';
 	public    $button_rows			= 'col-md-4';
 	
-    public    $habilitado			= array('Habilitado'=>'Habilitado','Inactivo'=>'Inactivo'); 
-	public    $total_registros      = array('300'=>'300','500'=>'500','1000'=>'1000'); 
+        public    $habilitado			= array('Habilitado'=>'Habilitado','Inactivo'=>'Inactivo'); 
+	public    $total_registros              = array('300'=>'300','500'=>'500','1000'=>'1000'); 
 	
 	public    $porlet_color			= 'blue';
 	public    $porlet_body			= '';

@@ -4,8 +4,8 @@
 #VARIABLE GLOBALES DB
 define('SERVER','localhost');
 define('USER','root');
-define('PASS','mk#2013');
-define('DATEBASE','new_admin');
+define('PASS','');
+define('DATEBASE','simple_admin');
 define('CODING','utf8');
 
 ?>
